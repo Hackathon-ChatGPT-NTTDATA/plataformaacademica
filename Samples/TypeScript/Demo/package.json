@@ -26,6 +26,9 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.4",
+    "popper.js": "^1.16.1",
     "whatwg-fetch": "^3.6.2"
   },
   "optionalDependencies": {
