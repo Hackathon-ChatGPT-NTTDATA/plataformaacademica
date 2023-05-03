@@ -1,8 +1,8 @@
-<div class="card text-bg-light mb-3" >
+<div class="card bg-light mb-3" >
   <div class="card-header">{{titulo}}</div>
   <div class="card-body">
+    <button class="btn btn-primary my-2" routerLink="/alumnos/form">crear</button>
     <table class="table table-hover table-stripe">
-
       <thead >
         <tr>
           <th>id</th>
@@ -19,12 +19,12 @@
           <td>{{alumno.nombre }}</td>
           <td>{{alumno.apellido}}</td>
           <td>{{alumno.email}}</td>
-          <td>{{alumno.createAt | date:'YYYY/MM/dd' }}</td>
+          <td>{{alumno.createAt | date:'YYYY/MM/dd'}}</td>
         </tr>
       </body>
 
     </table>
   </div>
-
+</div>
 
 
