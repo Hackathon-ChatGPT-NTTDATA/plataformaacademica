@@ -1,2 +1,30 @@
-<h1>{{titulo}}</h1>
-<p>alumnos works!</p>
+<div class="card text-bg-light mb-3" >
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+    <table class="table table-hover table-stripe">
+
+      <thead >
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>apellido</th>
+          <th>email</th>
+          <th>creado en </th>
+        </tr>
+
+      </thead>
+      <body>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{alumno.id}}</td>
+          <td>{{alumno.nombre }}</td>
+          <td>{{alumno.apellido}}</td>
+          <td>{{alumno.email}}</td>
+          <td>{{alumno.createAt | date:'YYYY/MM/dd' }}</td>
+        </tr>
+      </body>
+
+    </table>
+  </div>
+
+
+
