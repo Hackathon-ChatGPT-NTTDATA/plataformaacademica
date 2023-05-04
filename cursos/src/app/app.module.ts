@@ -9,6 +9,7 @@ import { CursosComponent } from './components/cursos/cursos.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { LayoutModule } from './layout/layout.module';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AlumnosFormComponent } from './components/alumnos/alumnos-form.componen
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
