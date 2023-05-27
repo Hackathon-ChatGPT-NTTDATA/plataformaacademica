@@ -9,7 +9,7 @@ import { Alumno } from '../models/alumno';
 })
 export class AlumnoService {
 
-  private baseEndpoint = 'localhost:8090/api/alumnos';
+  private baseEndpoint = 'http://localhost:8090/api/alumnowebflux/all';
   private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
 
   constructor(private http: HttpClient) { }
@@ -34,7 +34,8 @@ return this.http.get<any>(`${this.baseEndpoint}/pagina`,{params: params});
  public editar (alumno:Alumno): Observable<Alumno>{
   return this.http.put<Alumno>(`${this.baseEndpoint}/${alumno.id}`,alumno,{headers: this.cabeceras});
  }
-public eliminar (id: number): Observable<void>{
+public
+ (id: number): Observable<void>{
   return this.http.delete<void>(`${this.baseEndpoint}/${id}`);
 }
 }
