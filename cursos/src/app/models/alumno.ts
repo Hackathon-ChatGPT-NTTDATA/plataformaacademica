@@ -1,9 +1,8 @@
 export class Alumno {
-  id: number;
-  nombre: string;
-  apellido: string;
-  años: number
-  email: string;
-  createAt: string;
-  fotoHashCode: number;
+    id: String;
+    nombre: string;
+    apellido: string;
+    email: string;
+    createAt: string;
+    fotoHashCode: number;
 }
