@@ -13,7 +13,7 @@ export class AlumnoService {
 
   private baseEndpoint = 'http://localhost:8090/api/alumnowebflux/all';
 
-  private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
+  private cabeceras: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class AlumnoService {
 
 
 
-    public  listar(): Observable<Alumno[]> {
+  public  listar(): Observable<Alumno[]> {
     return this.http.get<Alumno[]>(this.baseEndpoint);
   }
 
@@ -37,8 +37,9 @@ export class AlumnoService {
   public ver (id: number): Observable<Alumno>{
    return this.http.get<Alumno>(`${this.baseEndpoint}/${id}`);
   }
-  public  crear (alumno:Alumno): Observable<Alumno>{
-   return this.http.post<Alumno>(this.baseEndpoint,alumno, {headers: this.cabeceras});
+  public  crear (alumno: Alumno): Observable<Alumno>{
+   return this.http.post<Alumno>(this.baseEndpoint, alumno,
+    { headers: this.cabeceras });
   }
   public editar (alumno:Alumno): Observable<Alumno>{
    return this.http.put<Alumno>(`${this.baseEndpoint}/${alumno.id}`,alumno,{headers: this.cabeceras});

@@ -9,8 +9,7 @@ import { Alumno } from 'src/app/models/alumno';
 })
 export class AlumnosComponent implements OnInit {
   titulo = 'Listado de Alumnos';
-  alumnos: Alumno[
-     ];
+  alumnos: Alumno[];
   constructor(private service: AlumnoService){ }
 
   ngOnInit(){
