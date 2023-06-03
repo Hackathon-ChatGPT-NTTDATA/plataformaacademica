@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnoService } from 'src/app/services/alumno.service';
 import { Alumno } from 'src/app/models/alumno';
+import { Subscriber, filter } from 'rxjs';
 
 @Component({
   selector: 'app-alumnos',
@@ -14,9 +15,15 @@ export class AlumnosComponent implements OnInit {
 
   ngOnInit(){
     this.service.listar().subscribe(alumnos => this.alumnos = alumnos);
-
-
-
   }
 
+
+  public eliminar(alumno: Alumno): void {
+
+    if(confirm(`¿seguro que desea eliminar a ${alumno.nombre} ?`)){
+      this.service.eliminar(alumno.id).subscribe(() => {this.alumnos = this.alumnos.filter(a => a !== alumno);
+      alert(`Alumno ${alumno.nombre} eliminado con exito`)
+    });
+  }
+  }
 }

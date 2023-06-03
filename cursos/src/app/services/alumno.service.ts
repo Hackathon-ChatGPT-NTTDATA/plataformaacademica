@@ -12,6 +12,9 @@ import { AlumnosComponent } from '../components/alumnos/alumnos.component';
 export class AlumnoService {
 
   private baseEndpoint = 'http://localhost:8090/api/alumnowebflux/all';
+  private baseEndpointcrear = 'http://localhost:8090/api/alumnowebflux/create-student';
+  private baseEndpointeditar = 'http://localhost:8090/api/alumnowebflux/update-student';
+  private baseEndpointeliminar = 'http://localhost:8090/api/alumnowebflux/delete-personal-asset';
 
   private cabeceras: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -38,13 +41,13 @@ export class AlumnoService {
    return this.http.get<Alumno>(`${this.baseEndpoint}/${id}`);
   }
   public  crear (alumno: Alumno): Observable<Alumno>{
-   return this.http.post<Alumno>(this.baseEndpoint, alumno,
+   return this.http.post<Alumno>(this.baseEndpointcrear, alumno,
     { headers: this.cabeceras });
   }
   public editar (alumno:Alumno): Observable<Alumno>{
-   return this.http.put<Alumno>(`${this.baseEndpoint}/${alumno.id}`,alumno,{headers: this.cabeceras});
+   return this.http.put<Alumno>(`${this.baseEndpointeditar}/${alumno.id}`,alumno,{headers: this.cabeceras});
   }
   public eliminar (id: number): Observable<void>{
-   return this.http.delete<void>(`${this.baseEndpoint}/${id}`);
-}
+   return this.http.delete<void>(`${this.baseEndpointeliminar}/${id}`);
+ }
 }

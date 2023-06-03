@@ -10,17 +10,20 @@
           <th>apellido</th>
           <th>email</th>
           <th>creado en</th>
+          <th>editar</th>
+          <th>eliminar</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let alumno of alumnos">
-          <td>{{alumno.id}}</td>
-          <td>{{alumno.nombre}}</td>
-          <td>{{alumno.apellido}}</td>
-          <td>{{alumno.email}}</td>
-          <td>{{alumno.createAt | date:'yyyy/MM/dd'}}</td>
-          <td> <button class="btn btn-secondary btn-sm"
-            [routerLink]="['/alumnos/form',alumno.id]"></button></td>
+        <tr *ngFor= "let alumno of alumnos">
+             <td>{{alumno.id}}</td>
+             <td>{{alumno.nombre}}</td>
+             <td>{{alumno.apellido}}</td>
+             <td>{{alumno.email}}</td>
+             <td>{{alumno.createAt | date: 'yyyy/MM/dd'}}</td>
+             <td><button class="btn btn-secondary btn-sm"
+               [routerLink]= "['/alumnos/form', alumno.id]">editar</button></td>
+             <td><button class="btn btn-danger btn-sm" (click)= "eliminar(alumno)">eliminar </button></td>
         </tr>
       </tbody>
     </table>
