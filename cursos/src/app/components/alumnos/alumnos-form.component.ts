@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Alumno } from 'src/app/models/alumno';
 import { AlumnoService } from 'src/app/services/alumno.service';
@@ -32,21 +33,20 @@ ngOnInit() {
 public crear(): void{
   this.service.crear(this.alumno).subscribe(alumno =>{
     console.log(alumno);
-    alert(`Alumno ${alumno.nombre} creado con éxitos`);
+    Swal.fire('nuevo:',`Alumno ${alumno.nombre} creado con éxitos`,'success');
     this.router.navigate(['/alumnos']);
-   }, err => {
+    }, err => {
      if(err.status === 400){
-      this.error = err.error;
-      console.log(this.error);
+     this.error = err.error;
+     console.log(this.error);
      }
-  });
+    });
 }
 
 public editar(): void{
-  this.service.editar(this.alumno).subscribe(alumno => {console.log(alumno);
-    alert(`Alumno ${alumno.nombre} actualizado con éxitos`);
-    this.router.navigate(['/alumnos']);
-
+  this.service.editar(this.alumno) .subscribe(alumno => {console.log(alumno);
+    Swal.fire('Modificado:' , `Alumno ${alumno.nombre} actualizado con éxitos`,'success');
+    this.router.navigate(['/alumno']);
    }, err => {
    if(err.status === 400){
      this.error = err.error;

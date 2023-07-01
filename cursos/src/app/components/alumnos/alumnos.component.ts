@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { AlumnoService } from 'src/app/services/alumno.service';
 import { Alumno } from 'src/app/models/alumno';
 import { Subscriber, filter } from 'rxjs';
@@ -20,10 +21,20 @@ export class AlumnosComponent implements OnInit {
 
   public eliminar(alumno: Alumno): void {
 
-    if(confirm(`¿seguro que desea eliminar a ${alumno.nombre} ?`)){
-      this.service.eliminar(alumno.id).subscribe(() => {this.alumnos = this.alumnos.filter(a => a !== alumno);
-      alert(`Alumno ${alumno.nombre} eliminado con exito`)
+    Swal.fire({
+      title: '¿Cuidado?',
+      text: `¿seguro que desea eliminar a ${alumno.nombre} ?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.service.eliminar(alumno.id).subscribe(() => {this.alumnos = this.alumnos.filter(a => a !== alumno);
+          Swal.fire('Eliminado:',`Alumno ${alumno.nombre} eliminado con exito`, 'success')
+        });
+      }
     });
-  }
   }
 }

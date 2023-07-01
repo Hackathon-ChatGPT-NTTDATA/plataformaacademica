@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+//import { map } from 'rxjs/operators';
 import { Alumno } from '../models/alumno';
 import { AlumnosComponent } from '../components/alumnos/alumnos.component';
 
@@ -20,14 +21,13 @@ export class AlumnoService {
 
   constructor(private http: HttpClient) { }
 
-  //*public listar(): Observable<Alumno[]>{
-  //*return this.http.get(this.baseEndpoint).pipe(map(alumnos => alumnos as Alumno[]));
-
-
+  //public listar():Observable<Alumno[]>{
+  //return this.http.get(this.baseEndpoint).pipe(map(alumnos => alumnos as Alumno[]));
+  //}
 
   public  listar(): Observable<Alumno[]> {
     return this.http.get<Alumno[]>(this.baseEndpoint);
-  }
+ }
 
   public listarPaguinas(page: string, size: string): Observable<any>{
     const params =new HttpParams()
