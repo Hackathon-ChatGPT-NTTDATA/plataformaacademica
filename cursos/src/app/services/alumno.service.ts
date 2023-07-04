@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-//import { map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Alumno } from '../models/alumno';
 import { AlumnosComponent } from '../components/alumnos/alumnos.component';
 
@@ -12,25 +12,28 @@ import { AlumnosComponent } from '../components/alumnos/alumnos.component';
 })
 export class AlumnoService {
 
-  private baseEndpoint = 'http://localhost:8090/api/alumnowebflux/all';
-  private baseEndpointcrear = 'http://localhost:8090/api/alumnowebflux/create-student';
-  private baseEndpointeditar = 'http://localhost:8090/api/alumnowebflux/update-student';
-  private baseEndpointeliminar = 'http://localhost:8090/api/alumnowebflux/delete-personal-asset';
+  private baseEndpoint = '/api/alumnowebflux/all';
+  private baseEndpointcrear = '/api/alumnowebflux/create-student';
+  private baseEndpointeditar = '/api/alumnowebflux/update-student';
+  private baseEndpointeliminar = '/api/alumnowebflux/delete-personal-asset';
 
   private cabeceras: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   //public listar():Observable<Alumno[]>{
   //return this.http.get(this.baseEndpoint).pipe(map(alumnos => alumnos as Alumno[]));
   //}
 
-  public  listar(): Observable<Alumno[]> {
-    return this.http.get<Alumno[]>(this.baseEndpoint);
- }
+    //listar(): Observable<any> {
+    //return this.http.get<any>('/api/alumnowebflux/all');
+   //}
+   public  listar():Observable<Alumno[]> {
+   return this.http.get<Alumno[]>(this.baseEndpoint);
+     }
 
-  public listarPaguinas(page: string, size: string): Observable<any>{
-    const params =new HttpParams()
+  public listarPaguinas(page: string, size: string):Observable<any>{
+    const params = new HttpParams()
     .set('page', page)
     .set('size', size);
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 import { AlumnoService } from 'src/app/services/alumno.service';
 import { Alumno } from 'src/app/models/alumno';
 import { Subscriber, filter } from 'rxjs';
@@ -7,15 +7,20 @@ import { Subscriber, filter } from 'rxjs';
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.css']
+  styleUrls: ['./alumnos.component.css'],
+
 })
 export class AlumnosComponent implements OnInit {
   titulo = 'Listado de Alumnos';
   alumnos: Alumno[];
+
   constructor(private service: AlumnoService){ }
 
   ngOnInit(){
-    this.service.listar().subscribe(alumnos => this.alumnos = alumnos);
+
+
+
+    this.service.listar().subscribe((alumnos) => this.alumnos = alumnos);
   }
 
 
