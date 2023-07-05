@@ -35,8 +35,9 @@ export class AlumnosComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, Eliminar!'
     }).then((result) => {
-      if (result.isConfirmed) {
-        this.service.eliminar(alumno.id).subscribe(() => {this.alumnos = this.alumnos.filter(a => a !== alumno);
+      if (result.value) {
+        this.service.eliminar(alumno.id).subscribe(() => {
+          this.alumnos = this.alumnos.filter(a => a !== alumno);
           Swal.fire('Eliminado:',`Alumno ${alumno.nombre} eliminado con exito`, 'success')
         });
       }

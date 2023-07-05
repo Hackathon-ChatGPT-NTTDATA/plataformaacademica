@@ -2,8 +2,10 @@
  <div class="card-header">{{titulo}}</div>
   <div class="card-body">
     <button class="btn btn-primary my-2" routerLink="/alumnos/form">crear</button>
-
-    <table class="table table-hover table-striped" >
+    <div class="alert alert-info" *ngIf="alumnos?.length==0">
+      no hay alumnos en el sistema.
+    </div>
+    <table class="table table-hover table-striped" *ngIf="alumnos?.length>0">
       <thead >
         <tr>
           <th>id</th>
