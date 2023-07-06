@@ -17,9 +17,6 @@ export class AlumnosComponent implements OnInit {
   constructor(private service: AlumnoService){ }
 
   ngOnInit(){
-
-
-
     this.service.listar().subscribe((alumnos) => this.alumnos = alumnos);
   }
 

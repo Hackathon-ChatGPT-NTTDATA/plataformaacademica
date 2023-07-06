@@ -40,15 +40,15 @@ export class AlumnoService {
    return this.http.get<any>(`${this.baseEndpoint}/pagina`, {params: params});
   }
 
-  public ver (id: number): Observable<Alumno>{
+  public ver (id:number): Observable<Alumno>{
    return this.http.get<Alumno>(`${this.baseEndpoint}/${id}`);
   }
-  public  crear (alumno: Alumno): Observable<Alumno>{
+  public crear (alumno:Alumno): Observable<Alumno>{
    return this.http.post<Alumno>(this.baseEndpointcrear, alumno,
-    { headers: this.cabeceras });
+    { headers:this.cabeceras });
   }
   public editar (alumno:Alumno): Observable<Alumno>{
-   return this.http.put<Alumno>(`${this.baseEndpointeditar}/${alumno.id}`,alumno,{headers: this.cabeceras});
+   return this.http.put<Alumno>(`${this.baseEndpointeditar}/${alumno.id}`,alumno,{headers:this.cabeceras});
   }
   public eliminar (id: number): Observable<void>{
    return this.http.delete<void>(`${this.baseEndpointeliminar}/${id}`);
