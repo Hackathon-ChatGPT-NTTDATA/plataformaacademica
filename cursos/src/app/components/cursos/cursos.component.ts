@@ -11,7 +11,7 @@ import { CursoService } from 'src/app/services/curso.service';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent extends CursoService implements OnInit {
-  titulo = 'Listado de Alumnos';
+  titulo = 'Listado de Cursos';
   cursos: Curso[];
   service: any;
 
