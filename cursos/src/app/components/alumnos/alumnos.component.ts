@@ -7,7 +7,7 @@ import { Subscriber, filter } from 'rxjs';
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
-  styleUrls: ['./alumnos.component.css'],
+  styleUrls: ['./alumnos.component.css']
 
 })
 export class AlumnosComponent implements OnInit {
@@ -17,11 +17,11 @@ export class AlumnosComponent implements OnInit {
   constructor(private service: AlumnoService){ }
 
   ngOnInit(){
-    this.service.listar().subscribe((alumnos) => this.alumnos = alumnos);
+    this.service.listar().subscribe(alumnos => this.alumnos = alumnos);
   }
 
 
-  public eliminar(alumno: Alumno): void {
+  public eliminar(alumno: Alumno): void{
 
     Swal.fire({
       title: '¿Cuidado?',
@@ -35,7 +35,7 @@ export class AlumnosComponent implements OnInit {
       if (result.value) {
         this.service.eliminar(alumno.id).subscribe(() => {
           this.alumnos = this.alumnos.filter(a => a !== alumno);
-          Swal.fire('Eliminado:',`Alumno ${alumno.nombre} eliminado con exito`, 'success')
+          Swal.fire('Eliminado:', `Alumno ${alumno.nombre} eliminado con exito`, 'success')
         });
       }
     });

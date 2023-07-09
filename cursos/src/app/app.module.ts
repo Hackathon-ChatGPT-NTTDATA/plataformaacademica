@@ -9,6 +9,8 @@ import { CursosComponent } from './components/cursos/cursos.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { LayoutModule } from './layout/layout.module';
 import { AlumnosFormComponent } from './components/alumnos/alumnos-form.component';
+import { CursoFormComponent } from './components/cursos/curso-form.component';
+import { ExamenFormComponent } from './components/examenes/examen-form.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AlumnosFormComponent } from './components/alumnos/alumnos-form.componen
     AlumnosComponent,
     CursosComponent,
     ExamenesComponent,
-    AlumnosFormComponent
+    AlumnosFormComponent,
+    CursoFormComponent,
+    ExamenFormComponent
   ],
   imports: [
     BrowserModule,

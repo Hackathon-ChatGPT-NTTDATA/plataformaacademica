@@ -44,6 +44,9 @@ export class AlumnosFormComponent implements OnInit {
       }
      });
   } */
+
+
+
   public crear(): void {
     this.service.crear(this.alumno).subscribe({
       next: (response: any) => {
@@ -57,9 +60,9 @@ export class AlumnosFormComponent implements OnInit {
           console.log(this.error);
         }
       },
-     // complete: () => {
-      //console.log('alumno creado');
-      //}
+     complete: () => {
+      console.log('alumno creado');
+      }
     });
   }
 
