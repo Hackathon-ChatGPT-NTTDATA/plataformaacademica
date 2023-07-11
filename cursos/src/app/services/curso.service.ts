@@ -1,5 +1,5 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Curso } from '../models/curso';
 
@@ -9,10 +9,10 @@ import { Curso } from '../models/curso';
 })
 export class CursoService  {
 
-  private baseEndpoint = 'localhost:8090/api/alumnowebflux/webclient';
-  private baseEndpointcrear = '/api/alumnowebflux/create-cursos';
-  private baseEndpointeditar = '/api/alumnowebflux/update-cursos';
-  private baseEndpointeliminar = '/api/alumnowebflux/delete-cursos';
+  private baseEndpoint = 'localhost:8090/api/cursos/webclient';
+  private baseEndpointcrear = 'localhost:8090/api/cursos/webclient/create-cursos';
+  private baseEndpointeditar = 'localhost:8090/api/cursos/webclient/update-cursos';
+  private baseEndpointeliminar = 'localhost:8090/api/cursos/webclient/delete-cursos';
 
   private cabeceras: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 

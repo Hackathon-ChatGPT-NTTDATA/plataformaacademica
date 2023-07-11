@@ -1,9 +1,11 @@
 <div class="card bg-light mb-3">
-  <div class="card-header">{{titulo}}</div>
-   <div class="card-body">
-     <button class="btn btn-primary my-2" routerLink="/cursos/form">crear</button>
-
-       <table class="table table-hover table-striped">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink= "/cursos/form" >crear</button>
+        <div class="alert alert-info" *ngIf="cursos.length==0">
+          No hay cursos en el sistema.
+      </div>
+       <table class="table table-hover table-striped" *ngIf="cursos.length>0">
        <thead >
          <tr>
            <th>id</th>
@@ -14,14 +16,18 @@
          </tr>
        </thead>
        <tbody>
-         <tr *ngFor= "let curso  of cursos">
+         <tr *ngFor="let curso  of cursos">
               <td>{{curso.id}}</td>
               <td>{{curso.nombre}}</td>
               <td>{{curso.createAt | date: 'yyyy/MM/dd'}}</td>
               <td><button class="btn btn-secondary btn-sm"
-                [routerLink]= "['/cursos/form', curso.id]">editar</button></td>
-              <td><button class="btn btn-danger btn-sm" (click)= "eliminar(curso)">eliminar </button></td>
-         </tr>
+                    [routerLink]= "['/cursos/form', curso.id]">
+                  editar
+              </button></td>
+              <td><button class="btn btn-danger btn-sm"
+                  (click)="eliminar(curso)">
+                  eliminar
+              </button></td>
        </tbody>
      </table>
    </div>

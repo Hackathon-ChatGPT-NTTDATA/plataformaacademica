@@ -14,10 +14,11 @@ import { AlumnoService } from 'src/app/services/alumno.service';
 
 export class AlumnosFormComponent implements OnInit {
 
-  titulo = "Crear Alumnos";
-  alumno: Alumno = new Alumno();
+titulo = "Crear Alumnos";
+alumno: Alumno = new Alumno();
 
-  error: any;
+error: any;
+model: Alumno;
 
   constructor(private service: AlumnoService,
               private router: Router,
@@ -66,7 +67,7 @@ export class AlumnosFormComponent implements OnInit {
     });
   }
 
-  /* public editar(): void {
+    /*public editar(): void {
     this.service.editar(this.alumno).subscribe(alumno => {
       console.log(alumno);
       Swal.fire('Modificado:', `Alumno ${alumno.nombre} actualizado con éxitos`, 'success');
@@ -77,7 +78,7 @@ export class AlumnosFormComponent implements OnInit {
         console.log(this.error);
       }
     });
-  } */
+  }*/
 
   public editar(): void{
     this.service.editar(this.alumno).subscribe({

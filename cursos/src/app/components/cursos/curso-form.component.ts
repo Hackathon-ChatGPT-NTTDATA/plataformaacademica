@@ -3,7 +3,6 @@ import { Curso } from 'src/app/models/curso';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2'
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { CursoService } from 'src/app/services/curso.service';
 
 @Component({
@@ -12,11 +11,12 @@ import { CursoService } from 'src/app/services/curso.service';
   styleUrls: ['./curso-form.component.css']
 })
 export class CursoFormComponent implements OnInit{
-  titulo = "Crear Curso";
-  curso: Curso = new Curso();
+titulo = "Crear Curso";
+curso: Curso = new Curso();
 
 
-  error: any;
+error: any;
+
 
   constructor(private service: CursoService,
               private router: Router,
@@ -26,7 +26,7 @@ export class CursoFormComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
       const id: number = +params.get('id');
       if(id){
-        this.service.ver(id).subscribe(curso => this.curso = this.curso)
+        this.service.ver(id).subscribe(curso => this.curso = curso)
       }
     });
   }
@@ -47,7 +47,7 @@ export class CursoFormComponent implements OnInit{
       this.service.editar(this.curso).subscribe({
         next: (response: any) => {
           console.log(response);
-          Swal.fire('Modificado:', `Alumno ${response.curso} actualizado con éxitos`, 'success');
+          Swal.fire('Modificado:', `Curso ${response.curso} actualizado con éxitos`, 'success');
           this.router.navigate(['/cursos']);
         },
 
@@ -55,9 +55,5 @@ export class CursoFormComponent implements OnInit{
           console.log('curso creado');
         }
       });}
-
-
-
-
 
 }
