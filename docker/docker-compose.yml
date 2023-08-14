@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+  plataforma_academica:
+    container_name: angular-cli
+    image: carlodelgado/plataformaacademica:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ./cursos/Dockerfile
+    restart: always
+    ports:
+      - "8080:4200"    
+    networks:
+      - net
+  avatar_2D:
+    container_name: avatar_2D
+    image: carlodelgado/avatar_2D${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ./Samples/TypeScript/Demo/Dockerfile
+    restart: always
+    ports:
+      - "80:5000"    
+    networks:
+      - net        
+networks:
+  net:
