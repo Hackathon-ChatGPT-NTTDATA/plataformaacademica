@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-
+  
   build:
     runs-on: ubuntu-latest
     
@@ -17,5 +17,27 @@ jobs:
       - uses: isbang/compose-action@v1.5.1
         with:
           compose-file: "./docker/docker-compose.yml"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Necessary to access local action
+      - name: Local Action Call
+        id: local-action
+        uses: ./.github/actions/local-action
+        with:
+          name: "World"
+      - name: Local Action Output
+        run: echo "${{ steps.local-action.outputs.random }}"
         
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Necessary to access local action
+      - name: Local Action Call
+        id: local-action
+        uses: ./.github/workflows/local-action
+        with:
+          name: "World"
+      - name: Local Action Output
+        run: echo "${{ steps.local-action.outputs.random }}"   
          

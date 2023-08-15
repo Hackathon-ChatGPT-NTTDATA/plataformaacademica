@@ -17,9 +17,9 @@ on:
 jobs:
 
   call-workflow-1-in-local-repo:
-    uses: ./cursos/.github/workflows/plataforma.yml
+    uses: ./.github/workflows/plataforma.yml
   call-workflow-2-in-local-repo:
-    uses: ./Samples/TypeScript/Demo/.github/workflows/avatar.yml
+    uses: ./.github/workflows/avatar.yml
 
   # This workflow contains a single job called "build"
   build:
