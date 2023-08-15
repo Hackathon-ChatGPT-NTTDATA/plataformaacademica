@@ -12,8 +12,8 @@ services:
     networks:
       - net
   avatar_2D:
-    container_name: avatar_2D
-    image: carlodelgado/avatar_2D${TAG:-latest}
+    container_name: avatar-2D
+    image: carlodelgado/avatar:${TAG:-latest}
     build:
       context: ../Samples/TypeScript/Demo/
       dockerfile: Dockerfile
