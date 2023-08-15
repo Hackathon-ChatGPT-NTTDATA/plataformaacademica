@@ -1,15 +1,15 @@
 FROM node:lts-bullseye as build
 WORKDIR /app
-COPY package".json -/
+COPY from:avatar package*.json ./
 RUN npm ci
-COPY . ./
+COPY . .
 RUN npm run build
 
 
 ### Stage 2
 
 FROM nginx:alpine
-ADD ./config/default.conf /etc//nginx/conf.d/default.conf
+ADD ./config/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /var/www/app/
 EXPOSE 5000
 CMD ["nginx","-g","daemon off;"]

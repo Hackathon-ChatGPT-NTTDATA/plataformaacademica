@@ -4,8 +4,8 @@ services:
     container_name: angular-cli
     image: carlodelgado/plataformaacademica:${TAG:-latest}
     build:
-      context: .
-      dockerfile: ./cursos/Dockerfile
+      context: ../cursos/
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "8080:4200"    
@@ -15,8 +15,8 @@ services:
     container_name: avatar_2D
     image: carlodelgado/avatar_2D${TAG:-latest}
     build:
-      context: .
-      dockerfile: ./Samples/TypeScript/Demo/Dockerfile
+      context: ../Samples/TypeScript/Demo/
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "80:5000"    
