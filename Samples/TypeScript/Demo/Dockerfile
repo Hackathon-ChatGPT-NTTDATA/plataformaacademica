@@ -4,7 +4,7 @@ COPY  package*.json ./
 RUN npm ci
 COPY ./Framework ./
 CMD ["sudo chmod -R +x node_modules","npm run-script serve"]
-RUN npm run-script serve
+
 
 
 
