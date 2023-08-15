@@ -21,6 +21,7 @@ services:
     ports:
       - "80:5000"    
     networks:
-      - net        
+      - net
+    command: sudo chmod -R +x node_module
 networks:
   net:
