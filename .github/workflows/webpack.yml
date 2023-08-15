@@ -7,10 +7,6 @@ on:
     branches: [ "master" ]
 
 jobs:
-  call-workflow-plataforma-in-local-repo:
-    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/cursos/.github/workflows/plataforma.yml
-  call-workflow-avatar-in-local-repo:
-     uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/cursos/.github/workflows/plataforma.yml
 
   build:
     runs-on: ubuntu-latest
