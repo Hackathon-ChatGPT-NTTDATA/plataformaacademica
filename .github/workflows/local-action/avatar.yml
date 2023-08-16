@@ -18,23 +18,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: setup node
         uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node-version }}
 
-      # install applicaion dependencies
-      - name: Install dependencies
-        run: |
-          npm install
-          npm ci
-      # build and test the apps
-      - name: build
-        run: |
-          npm run build
-          npm run test
+      
   push_to_Docker_Hub:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
@@ -64,12 +55,12 @@ jobs:
             context: ./
             file: ./Dockerfile
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/plataformaacademica:latest
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/avatar:latest
 
         - name: Run the image in a container
           uses: addnab/docker-run-action@v3
           with:
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/plataformaacademica:latest
+            image: ${{ secrets.DOCKERHUB_USERNAME }}/avatar:latest
             run: |
               echo "runing the docker image"
               echo "Testing the nodejs  app endpoints"

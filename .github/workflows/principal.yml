@@ -25,7 +25,7 @@ jobs:
       - name: Local Action Call
         id: local-action
         uses: ./.github/workflows/local-action
-        with:
-          name: "World"
+        with: 
+          name: "frontend"
    
          
