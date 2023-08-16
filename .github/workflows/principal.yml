@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: Local Action Call
         id: local-action
-        uses: ./.github/workflows/local-action
+        uses: ./blob/master/.github/workflows/local-action/
         with: 
           name: "plataformaacademica"
 
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v3 # Necessary to access local action
       - name: Avatar Action Call
         id: avatar
-        uses: ./.github/workflows/avatar
+        uses: ./blob/master/.github/workflows/avatar/
         with: 
           name: "avatar"
    
