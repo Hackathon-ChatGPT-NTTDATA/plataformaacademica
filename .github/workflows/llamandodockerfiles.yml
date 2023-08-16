@@ -17,7 +17,7 @@ on:
 jobs:
 
   call-workflow-1-in-local-repo:
-    uses: ./.github/workflows/plataforma.yml@378d5655a8aacae37b00de14d14d152684b8a8e0
+    uses: ./.github/workflows/plataforma.yml@378d5655a8aacae37b00de14d14d152684b8a8e0/v1/master
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/avatar.yml
 
