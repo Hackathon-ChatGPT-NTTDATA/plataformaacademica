@@ -7,9 +7,8 @@ on:
     branches: [ "master" ]
 
 jobs:
-  
-  
-   
+ 
+
   job1:
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
+        with:
+          repository: Hackathon-ChatGPT-NTTDATA/plataformaacademica
+          path: ./.github/local-action/
       - name: Local Action Call
         id: local-action
         uses: ./.github/local-action/
