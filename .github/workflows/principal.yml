@@ -8,9 +8,9 @@ on:
 
 jobs:
   call-workflow:
-    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/.github/workflows/avatar.yml@
+    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/.github/workflows/avatar.yml@v1
   call-workflow2:
-      uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/.github/workflows/plataforma.yml
+      uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/.github/workflows/plataforma.yml@v1
    
   job1:
     runs-on: ubuntu-latest
