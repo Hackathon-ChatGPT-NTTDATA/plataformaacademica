@@ -18,11 +18,22 @@ jobs:
         with:
           compose-file: "./docker/docker-compose.yml"
         
-  plataforma:
-    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/tree/master/.github/local-action/action.yml
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Necessary to access local action
+      - name: Local Action Call
+        id: local-action
+        uses: ./.github/local-action/
+       
+
       
-  avatar:
-    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/blob/master/.github/avatar/action.yml/.github/avatar/action.yml
-        
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Necessary to access local action
+      - name: Avatar Action Call
+        id: avatar
+        uses: ./.github/avatar/  
    
          
