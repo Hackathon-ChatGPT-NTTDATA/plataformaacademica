@@ -51,4 +51,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/cursos:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/avatar:latest
