@@ -7,8 +7,10 @@ on:
     branches: [ "master" ]
 
 jobs:
- 
+  call-workflow:
+    uses: Hackathon-ChatGPT-NTTDATA/plataformaacademica/.github/local-action/action.yml@v1
 
+   
   job1:
     runs-on: ubuntu-latest
     steps:
@@ -21,10 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3 # Necessary to access local action
-        with:
-          repository: Hackathon-ChatGPT-NTTDATA/plataformaacademica
-          path: ./.github/local-action/action.yml
-          branch_name: master
       - name: Local Action Call
         id: local-action
         uses: ./.github/local-action/
@@ -39,12 +37,4 @@ jobs:
         id: avatar
         uses: ./.github/avatar/  
    
-  job4:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Checkout private actions
-        uses: vweevers/multi-checkout-action@v1
-        with:
-          repositories: mHackathon-ChatGPT-NTTDATA/plataformaacademica
-          branch_name: master
+         

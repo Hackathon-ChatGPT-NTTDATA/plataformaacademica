@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cd Samples/TypeScript/Demo && npm run-script serve && cd cursos && ng serve" ,
     "prestart": "cd Samples/TypeScript/Demo && npm run-script build",
-    "poststart": "cd cursos && ng servex" ,
+    "poststart": "cd cursos && ng serve" ,
+    "plataforma": "cd cursos &&  npm install @angular/cli",
     "build": "cd Samples/TypeScript/Demo && npm run-script build" ,
     "build:prod": "webpack --mode production",
     "test": "tsc --noEmit",
