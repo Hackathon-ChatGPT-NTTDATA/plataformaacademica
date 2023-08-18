@@ -38,4 +38,11 @@ jobs:
         id: avatar
         uses: ./.github/avatar/  
    
-         
+  job4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout private actions
+        uses: vweevers/multi-checkout-action@v1
+        with:
+          repositories: mHackathon-ChatGPT-NTTDATA/plataformaacademica     
