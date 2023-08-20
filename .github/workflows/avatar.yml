@@ -38,6 +38,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./Samples/TypeScript/Demo
+          file: ./Samples/TypeScript/Demo/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/avatar:latest
