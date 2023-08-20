@@ -4,7 +4,6 @@ COPY  ./ /app/
 COPY  package*.json ./
 COPY ./Framework ./Framework
 RUN npm install
-RUN npm build
 CMD ["npm run-script serve","npm run-script start","npm start"]
 
 
