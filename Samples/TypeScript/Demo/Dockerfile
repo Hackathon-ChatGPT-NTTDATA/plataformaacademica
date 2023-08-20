@@ -4,7 +4,7 @@ COPY  ./ /app/
 COPY  package*.json ./
 COPY ./Framework ./Framework
 RUN npm install
-RUN npm run build -- --prod
+RUN npm run build --prod
 
 
 

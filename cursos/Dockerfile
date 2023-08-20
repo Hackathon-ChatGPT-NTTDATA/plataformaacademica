@@ -3,7 +3,7 @@ WORKDIR /app
 COPY  ./ /app/
 COPY  package*.json ./
 RUN npm install
-RUN npm run build -- --prod
+RUN npm run build --prod
 CMD ["sudo chmod -R +x node_modules","npm run-script serve"]
 
 ### Stage 2
