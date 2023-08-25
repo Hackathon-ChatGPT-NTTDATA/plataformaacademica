@@ -26,3 +26,7 @@ COPY --from=build /app/src /usr/share/nginx/html
 RUN echo $(ls -1 /usr/share/nginx/html/)
 EXPOSE 80
 CMD ["nginx","-g","daemon off;"]
+
+
+
+
