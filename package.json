@@ -3,7 +3,7 @@
   "description": "generacion de contenedores del frontend que consumiran los cursos e interaccion con un avatar",
 
   "scripts": {
-    "start": "cd Samples/TypeScript/Demo && npm run-script serve && cd cursos && ng serve" ,
+    "start": "cd Samples/TypeScript/Demo && npm run-script serve" ,
     "prestart": "cd Samples/TypeScript/Demo && npm run-script build",
     "poststart": "cd cursos && ng serve" ,
     "plataforma": "cd cursos &&  npm install @angular/cli",
