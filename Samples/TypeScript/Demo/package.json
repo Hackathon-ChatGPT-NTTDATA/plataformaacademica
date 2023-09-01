@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-   "prestart": "cd ./Framework && npm install && npm install -g typescript && npm fund && npm audit fix && npm i @types/ws && cd ./dist && npm run-script build",
+   "prestart": "npm install && npm install -g typescript && npm fund && npm audit fix && npm i @types/ws && npm install -D webpack-cli",
    "start": "webpack-cli serve --mode development",
     "build": "webpack --mode development",
     "build:prod": "webpack --mode production",
