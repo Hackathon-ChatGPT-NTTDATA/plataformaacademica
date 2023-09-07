@@ -9,7 +9,7 @@ import { Curso } from '../models/curso';
 })
 export class CursoService {
 
-  private baseEndpoint = 'localhost:8090/api/alumnos';
+  private baseEndpoint = 'localhost:8090/api/cursos';
   private cabeceras: HttpHeaders = new HttpHeaders({'ContentType': 'application/json'});
 
   constructor(private http: HttpClient) { }
@@ -22,7 +22,7 @@ export class CursoService {
     const params =new HttpParams()
     .set('page', page)
     .set('size', size);
-return this.http.get<any>(`${this.baseEndpoint}/pagina`,{params: params});
+return this.http.get<any>(`${this.baseEndpoint}/all`,{params: params});
   }
 
   public ver (id: number): Observable<Curso>{

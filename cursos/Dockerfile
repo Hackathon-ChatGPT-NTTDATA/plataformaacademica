@@ -15,3 +15,11 @@ COPY --from=build /app/dist/cursos /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx","-g","daemon off;"]
 
+#### ejecutar comandos de manera local
+
+###  docker build . -t cursos:latest
+
+
+###  docker run  -p 80:80  cursos:latest
+
+## la configuracion de nginx esta en la carpeta config al puerto 80
