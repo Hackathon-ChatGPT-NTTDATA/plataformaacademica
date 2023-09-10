@@ -19,7 +19,7 @@ COPY --from=build /app/Framework/src /var/www/avatar/Framework/src
 COPY --from=build /app/dist /var/www/avatar/dist
 COPY --from=build /app/index.html /var/www/avatar/index.html
 COPY ./config/default.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+EXPOSE 5000
 
 #### ejecutar comandos de manera local
 
