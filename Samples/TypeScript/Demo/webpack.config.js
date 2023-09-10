@@ -13,7 +13,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-      '@framework': path.resolve(__dirname, '../../../Framework/src')
+      '@framework': path.resolve(__dirname, './Framework/src')
     }
   },
   module: {
@@ -28,7 +28,7 @@ module.exports = {
   devServer: {
     static: [
       {
-        directory: path.resolve(__dirname, '../../..'),
+        directory: path.resolve(__dirname, '.'),
         serveIndex: true,
         watch: true,
       }
