@@ -33,5 +33,5 @@ EXPOSE 5000
 
 ### docker build . -t avatar:1.0
 ### docker run -d --name avatar-app-local -p 80:80 avatar:1.0
-
+## docker run -p 5000:5000 avatar:1.0
 ### PS D:\hackathon\frontend\xingularidad\plataformaacademica\cursos> docker run -d -p 80:80 cursos:latest

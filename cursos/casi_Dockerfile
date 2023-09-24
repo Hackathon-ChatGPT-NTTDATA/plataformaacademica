@@ -1,0 +1,29 @@
+
+FROM node:lts-bullseye as build
+WORKDIR /app
+COPY ./package.json /app/
+RUN npm install
+COPY  ./ /app/
+CMD ["npm run-script serve","npm run-script start","npm start"]
+
+
+
+
+### Stage 2
+
+FROM nginx:alpine
+ADD  ./config/default.conf /etc/nginx/conf.d/default.conf
+COPY ./config/default.conf /etc/nginx/conf.d/default.conf
+RUN echo $(ls -1 /etc/nginx/conf.d/)
+EXPOSE 80
+
+#### ejecutar comandos de manera local
+
+###  docker build . -t test:latest
+###  docker build . -t cursos:1.0
+
+###  docker run  -p 80:80  cursos:1.0
+
+## la configuracion de nginx esta en la carpeta config al puerto 80
+
+
