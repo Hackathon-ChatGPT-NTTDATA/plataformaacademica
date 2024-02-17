@@ -10,10 +10,10 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'b5d49136-7746-4b28-a4df-68541f0a0eea'
-  imageRepository: 'app1/app1avatar'
+  dockerRegistryServiceConnection: '8c43b5b4-0f2e-400d-b0a7-9382749af212'
+  imageRepository: 'app1/plataforma'
   containerRegistry: 'aksdevopsacr.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/cursos/Dockerfile'
   tag: '$(Build.BuildId)'
   
   # Agent VM image name
