@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'b5d49136-7746-4b28-a4df-68541f0a0eea'
+  dockerRegistryServiceConnection: '8c43b5b4-0f2e-400d-b0a7-9382749af212'
   imageRepository: 'frontend/avatar'
   containerRegistry: 'acrcoderpath.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Samples/TypeScript/Demo/Dockerfile'
