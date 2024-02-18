@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hackathonchatgptnttdataplataformaacademica 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hackathonchatgptnttdataplataformaacademica
+  template:
+    metadata:
+      labels:
+        app: hackathonchatgptnttdataplataformaacademica 
+    spec:
+      containers:
+        - name: hackathonchatgptnttdataplataformaacademica 
+          image: acrcoderpath.azurecr.io/hackathonchatgptnttdataplataformaacademica
+          ports:
+          - containerPort: 5000
